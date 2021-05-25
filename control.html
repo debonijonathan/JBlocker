@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            }
+
+            .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+            }
+
+            .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+
+            body {
+                background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+                background-size: 500% 1500%;
+                animation: gradient 15s ease infinite;
+                min-width: 200px;
+                min-height: 300px;
+
+            }
+
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+
+            input:checked + .slider {
+            background-color: #00cc00;
+            }
+
+            input:focus + .slider {
+            box-shadow: 0 0 1px #00cc00;
+            }
+
+            input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+            }
+
+            /* Rounded sliders */
+            .slider.round {
+            border-radius: 34px;
+            }
+
+            .slider.round:before {
+            border-radius: 50%;
+            }
+
+            h2 {text-align: center;}
+
+            .center{text-align: center;}
+
+        </style>
+    </head>
+    <body>
+
+    <h2>JBlocker</h2>
+    <hr>
+    <div style="min-height: 100px;"></div>
+    <div><!--style="display: table; height: 400px; overflow: hidden;"-->
+        <div ><!--style="display: table-cell; vertical-align: middle;">-->
+            <div class="center">
+                <label class="switch">
+                    <input id="switch_button" type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+                <h3>Click to turn in off</h3>
+            </div>
+        </div>
+    </div>
+
+    </body>
+</html> 
